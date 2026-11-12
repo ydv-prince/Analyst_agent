@@ -1,0 +1,14 @@
+{
+  "name": "analyst-agent",
+  "version": "1.0.0",
+  "description": "AI-Assisted Data Analysis Agent",
+  "private": true,
+  "scripts": {
+    "client": "npm --prefix client run dev",
+    "server": "npm --prefix server run dev",
+    "build": "npm --prefix client run build",
+    "test:server": "node server/test/test_phase2.js",
+    "test:client": "node client/test_phase3.js && node client/test_phase4.js",
+    "test": "node server/test/test_phase2.js && node client/test_phase3.js && node client/test_phase4.js"
+  }
+}
