@@ -1,8 +1,10 @@
 import express from 'express';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import { connectDB } from './config/db.js';
+import authRoutes from './routes/authRoutes.js';
 import sessionRoutes from './routes/sessionRoutes.js';
 import chatRoutes from './routes/chatRoutes.js';
 import errorHandler from './middleware/errorHandler.js';
@@ -35,8 +37,9 @@ app.use(
   })
 );
 
-// Body Parser Middleware
+// Body Parser & Cookie Middleware
 app.use(express.json({ limit: '1mb' }));
+app.use(cookieParser());
 
 // Health / Status Check Endpoint
 app.get('/api/health', (req, res) => {
@@ -64,6 +67,7 @@ app.get('/api/health', (req, res) => {
 });
 
 // Mount Approved API Routes
+app.use('/api/auth', authRoutes);
 app.use('/api/sessions', sessionRoutes);
 app.use('/api/chat', chatRoutes);
 
