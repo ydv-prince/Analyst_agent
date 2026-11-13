@@ -1,8 +1,22 @@
 {
   "name": "analyst-agent",
   "version": "1.0.0",
-  "description": "AI-Assisted Data Analysis Agent",
+  "description": "AI-Assisted Data Analysis Agent built on the MERN stack and Mistral AI",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ydv-prince/Analyst_agent.git"
+  },
+  "keywords": [
+    "mern",
+    "react",
+    "vite",
+    "express",
+    "mongodb",
+    "mistral-ai",
+    "data-analysis",
+    "ai-agent"
+  ],
   "scripts": {
     "client": "npm --prefix client run dev",
     "server": "npm --prefix server run dev",
